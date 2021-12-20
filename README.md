@@ -21,7 +21,7 @@ The only feature currently implemented (Day 1) is the `DownloadHandler` and the 
 For a quick example you can use
 
 ```python
-from CoSpecPy import DownloadHandler # Import the Handler
+from CoSpecPy import DownloadHandler, Composite # Import the Handler
 
 example_handler = DownloadHandler(download_method = "wget", #Download method (aria2 or wget)
 no_of_connections = 1, batch_size="10", #Connections only apply to aria2, batches not implemented
