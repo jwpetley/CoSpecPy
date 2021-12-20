@@ -19,4 +19,6 @@ setup(name='CoSpecPy',
 
 
       python_requires=">=3.6",
+
+      package_data={'': ['data/*']}
       )
