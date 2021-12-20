@@ -46,7 +46,7 @@ class Composite:
         write_output(filename, self.fluxes)
 
 
-        
+
 
     def plot_composite(self):
         '''Simple plot of the current composite'''
@@ -75,9 +75,8 @@ class Composite:
         self.add_wavelength_grid(1000, 3000, 2500)
         self.add_normalisation(2575, 2625)
 
-        DATA_PATH = pkg_resources.resource_filename(__name__, 'test/test_tmp')
-        self.composite_from_downloads(DATA_PATH)
 
-        print(self.fluxes)
+        self.composite_from_downloads(self.download_folder)
+
 
         self.plot_composite()
