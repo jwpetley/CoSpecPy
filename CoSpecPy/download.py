@@ -5,7 +5,7 @@ import pkg_resources
 from glob import glob
 
 
-class DownloadSpectra:
+class DownloadHandler:
     ''' Class for handling the downloading of spectra given
     a method and various forms of object lists'''
 

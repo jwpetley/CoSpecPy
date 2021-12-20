@@ -1,1 +1,1 @@
-from .download import DownloadSpectra
+from .download import DownloadHandler
