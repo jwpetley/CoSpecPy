@@ -70,13 +70,13 @@ class Composite:
 
         plt.show()
 
-    def example_from_downloads(self):
+    def example_from_downloads(self, download_folder):
         '''Full example run using the already downloaded list'''
         self.add_wavelength_grid(1000, 3000, 2500)
         self.add_normalisation(2575, 2625)
 
 
-        self.composite_from_downloads(self.download_folder)
+        self.composite_from_downloads(download_folder)
 
 
         self.plot_composite()

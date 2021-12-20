@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(name='CoSpecPy',
-      version='0.3',
+      version='0.4',
       author = "James Petley",
       author_email = "jwpetley@gmail.com",
 
