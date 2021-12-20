@@ -1,12 +1,15 @@
 Metadata-Version: 2.1
 Name: CoSpecPy
 Version: 0.1
-Summary: UNKNOWN
+Summary: Python Package for SDSS Composite Spectra
 Home-page: https://github.com/jwpetley/CoSpecPy
+Author: James Petley
+Author-email: jwpetley@gmail.com
 License: UNKNOWN
+Description: # Python Package for Composite Spectra making from SDSS Spectra
+        
+        Hello world!
+        
 Platform: UNKNOWN
 Requires-Python: >=3.6
-License-File: LICENSE
-
-UNKNOWN
-
+Description-Content-Type: text/markdown

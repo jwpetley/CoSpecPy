@@ -9,3 +9,4 @@ CoSpecPy.egg-info/SOURCES.txt
 CoSpecPy.egg-info/dependency_links.txt
 CoSpecPy.egg-info/top_level.txt
 CoSpecPy/test/__init__.py
+CoSpecPy/test/test_download.py

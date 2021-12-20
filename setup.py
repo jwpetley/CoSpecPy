@@ -7,10 +7,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(name='CoSpecPy',
       version='0.1',
-      author = "James Petle"
-      author_email = "jwpetley@gmail.com"
+      author = "James Petley",
+      author_email = "jwpetley@gmail.com",
 
-      short_description = "Python Package for SDSS Composite Spectra"
+      description = "Python Package for SDSS Composite Spectra",
       long_description = long_description,
       long_description_content_type="text/markdown",
       url="https://github.com/jwpetley/CoSpecPy",
