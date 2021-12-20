@@ -16,7 +16,7 @@ Or alternatively you can clone this GitHub repository, navigate to the directory
 
 ## Quick Start
 
-The only feature currently implemented (Day 1) is the `DownloadHandler`. Make sure that either `wget` or `aria2` is installed on your machine.
+The only feature currently implemented (Day 1) is the `DownloadHandler` and the basics of the main `Composite` class. Make sure that either `wget` or `aria2` is installed on your machine.
 
 For a quick example you can use
 
@@ -31,7 +31,14 @@ no_of_connections = 1, batch_size="10", #Connections only apply to aria2, batche
 example_handler.download_example()
 
 #This will download the 25 example spectra in CoSpecPy/data/example_speclist.txt to your chosen output
+
+example_composite = Composite(name = "example_composite") #Creation of Composite Class
+example_composite.example_from_downloads() # Will add various parameters and plot the 25 spectra
 ```
+
+Output should look something like this
+
+![./example.png](./example.png)
 
 ## Download Dependencies
 
