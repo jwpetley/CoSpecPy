@@ -1,4 +1,6 @@
+LICENSE
 README.md
+pyproject.toml
 setup.py
 CoSpecPy/__init__.py
 CoSpecPy/download.py
