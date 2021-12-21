@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Composites &#8212; CoSpecPy 0.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Download Handler" href="DownloadHandler.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DownloadHandler.html" title="Download Handler"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CoSpecPy 0.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Composites</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-CoSpecPy.composites">
+<span id="composites"></span><h1>Composites<a class="headerlink" href="#module-CoSpecPy.composites" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CoSpecPy.composites.</span></span><span class="sig-name descname"><span class="pre">Composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Composite Class to handle creation of composites</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#CoSpecPy.composites.Composite.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name given to created Composite. Used in Plotting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.composite_from_downloads">
+<span class="sig-name descname"><span class="pre">composite_from_downloads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.composite_from_downloads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create composite from a directory of downloaded spectra</p>
+<p>Given a folder containing SDSS spectra downloads, create the normalised fluxes
+and store within the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>download_folder</strong> (<em>string</em>) – Path to the folder where spectra are downloaded as .fits files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.composite_from_speclist">
+<span class="sig-name descname"><span class="pre">composite_from_speclist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speclist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.composite_from_speclist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a composite from speclist</p>
+<p>From a valid speclist.txt file cotaining valid SDSS URLs, download all spectra and create a composite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>speclist</strong> (<em>str</em>) – Path to speclist file</p></li>
+<li><p><strong>chunks</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of smallr chunks to split composite processing into. Useful if disc space is an issue.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.composite_from_table">
+<span class="sig-name descname"><span class="pre">composite_from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.composite_from_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Composite from an Astropy Table</p>
+<p>Create a composite from an Astropy table, produces speclist files as an intermediary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<em>Astropy.Table</em>) – Valid astropy Table containing the sample. Must have columns PLATE, MJD and FIBERID.</p></li>
+<li><p><strong>chunks</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of smaller chunks to split composite processing into. Useful if disc space is an issue.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.example_from_downloads">
+<span class="sig-name descname"><span class="pre">example_from_downloads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.example_from_downloads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full example run using the already downloaded list</p>
+<p>Run an example composite creation using some default values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>download_folder</strong> (<em>str</em>) – Path to where the spectra are downloaded in .fits format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.get_composite">
+<span class="sig-name descname"><span class="pre">get_composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.get_composite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the averaged composite with bootstrapped uncertainties if chosen</p>
+<p>This will collect the normalised fluxes and take the median as the overall composite.
+If the number of samples is specified it will also calculate the uncertainty through
+bootstrapping and return this along with the median.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of bootstrap samples to take.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>tuple containing:</dt><dd><p>median_flux (array): Array of the composite at each point on the wavelength grid.
+bootstrap_std (array, optional): Bootstrapped uncertainty at each point on the wavelength grid.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(tuple)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.get_fluxes">
+<span class="sig-name descname"><span class="pre">get_fluxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.get_fluxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current flux list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>An array containing each normalised spectra as a different</dt><dd><p>element</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(numpy array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.plot_composite">
+<span class="sig-name descname"><span class="pre">plot_composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.plot_composite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple plot of the current composite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>output_figure</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional specification for a filename at which to save the composite plot. Will otherwise simply show the plot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.reset_composite">
+<span class="sig-name descname"><span class="pre">reset_composite</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.reset_composite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the flux list to an empty list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.save_composite">
+<span class="sig-name descname"><span class="pre">save_composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.save_composite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save current set of fluxes to .npy file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Output filename for composite. Must be .npy extension.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.set_download_handler">
+<span class="sig-name descname"><span class="pre">set_download_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.set_download_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the download handler for in-built fetching of spectra</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>handler</strong> (<a class="reference internal" href="DownloadHandler.html#CoSpecPy.download.DownloadHandler" title="CoSpecPy.download.DownloadHandler"><em>DownloadHandler</em></a>) – Input download handler instance. Will control future SDSS downloads.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.set_normalisation">
+<span class="sig-name descname"><span class="pre">set_normalisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">norm_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.set_normalisation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add upper and lower normalisation values</p>
+<p>Normalisation is applied by dividing by the average value over a given
+wavelength range. This sets the upper and lower end of that range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm_low</strong> (<em>float</em>) – Lower wavelength for normalisation in Angstrom</p></li>
+<li><p><strong>norm_high</strong> (<em>float</em>) – Upper wavelength for normalisation in Angstrom</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.composites.Composite.set_wavelength_grid">
+<span class="sig-name descname"><span class="pre">set_wavelength_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.composites.Composite.set_wavelength_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the common wavelength grid</p>
+<p>Creates a numpy linspace which is used to interpolate SDSS spectra. Takes form np.linspace(w_min, w_max, steps).
+Wavelength is in Angstroms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w_min</strong> (<em>float</em>) – Minimum wave;ength for grid in Angstroms</p></li>
+<li><p><strong>w_max</strong> (<em>float</em>) – Maximum wavelength for grid in Ansgtroms</p></li>
+<li><p><strong>steps</strong> (<em>int</em>) – Number of points in the wavelength grid linspace</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DownloadHandler.html"
+                        title="previous chapter">Download Handler</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Composites.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DownloadHandler.html" title="Download Handler"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CoSpecPy 0.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Composites</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, James Petley.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

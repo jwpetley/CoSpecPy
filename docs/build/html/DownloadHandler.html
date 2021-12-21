@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Download Handler &#8212; CoSpecPy 0.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Composites" href="Composites.html" />
+    <link rel="prev" title="Quick Start" href="getting_started.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Composites.html" title="Composites"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Quick Start"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CoSpecPy 0.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Download Handler</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-CoSpecPy.download">
+<span id="download-handler"></span><h1>Download Handler<a class="headerlink" href="#module-CoSpecPy.download" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CoSpecPy.download.</span></span><span class="sig-name descname"><span class="pre">DownloadHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_of_connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Control acces to SDSS spectra</p>
+<p>This class is used to handle all downloads from SDSS servers and can be customised
+by connection type and number to increase efficiency.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.download_method">
+<span class="sig-name descname"><span class="pre">download_method</span></span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.download_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Valid download method of either <cite>wget</cite> or <cite>aria2</cite>. Controls the download of SDSS spectra</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.no_of_connections">
+<span class="sig-name descname"><span class="pre">no_of_connections</span></span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.no_of_connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>For <cite>aria2</cite> connection this defines the number of simultaneous connections to SDSS servers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls batch size of download (size of each chunk)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.download_folder">
+<span class="sig-name descname"><span class="pre">download_folder</span></span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.download_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to desired download folder for all future downloads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.clear_up">
+<span class="sig-name descname"><span class="pre">clear_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.clear_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear files away from the specified download_folder</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.download_example">
+<span class="sig-name descname"><span class="pre">download_example</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.download_example" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the example short spectra list in the data directory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.download.DownloadHandler.download_spectra">
+<span class="sig-name descname"><span class="pre">download_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.download.DownloadHandler.download_spectra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download spectra from a file.</p>
+<p>Given spectra list containing correctly formatted URLs, download
+using preferred method given in class initiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>download_file</strong> (<em>str</em>) – Path to the file containing the valid URLs</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="getting_started.html"
+                        title="previous chapter">Quick Start</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Composites.html"
+                        title="next chapter">Composites</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/DownloadHandler.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Composites.html" title="Composites"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Quick Start"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CoSpecPy 0.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Download Handler</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, James Petley.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

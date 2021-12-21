@@ -7,8 +7,17 @@ import os
 
 
 class DownloadHandler:
-    ''' Class for handling the downloading of spectra given
-    a method and various forms of object lists'''
+    '''Control acces to SDSS spectra
+
+        This class is used to handle all downloads from SDSS servers and can be customised
+        by connection type and number to increase efficiency.
+
+        Attributes:
+            download_method (str): Valid download method of either `wget` or `aria2`. Controls the download of SDSS spectra
+            no_of_connections (int): For `aria2` connection this defines the number of simultaneous connections to SDSS servers
+            batch_size (int): Controls batch size of download (size of each chunk)
+            download_folder (str): Path to desired download folder for all future downloads.
+    '''
 
     def __init__(self, download_method, no_of_connections,
                     batch_size, download_folder):
@@ -21,8 +30,14 @@ class DownloadHandler:
         self.download_folder = os.path.abspath(download_folder)
 
     def download_spectra(self, download_file):
-        '''Given spectra list containing correctly formatted URLs, download
-        using preferred method given in class initiation'''
+        '''Download spectra from a file.
+
+        Given spectra list containing correctly formatted URLs, download
+        using preferred method given in class initiation
+
+        Args:
+            download_file (str): Path to the file containing the valid URLs
+        '''
         if self.download_method == "aria2":
             call(['aria2c', '-c', '--check-certificate=false',
             '-j', str(self.no_of_connections), '-i', download_file],
