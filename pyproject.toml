@@ -6,7 +6,5 @@ requires = [
     "numpy",
     "scipy",
     "astropy",
-    "glob",
-    "subprocess"
 ]
 build-backend = "setuptools.build_meta"
