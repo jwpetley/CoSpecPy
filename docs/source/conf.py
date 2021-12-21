@@ -34,7 +34,7 @@ extensions = ['sphinx.ext.autodoc',
         'sphinx.ext.napoleon',
 ]
 
-autodoc_mock_imports = ["numpy", "scipy"]
+autodoc_mock_imports = ["numpy""]
 
 
 
