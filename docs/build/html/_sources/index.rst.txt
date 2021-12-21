@@ -10,8 +10,7 @@ Welcome to CoSpecPy's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-.. toctree::
-   getting_started.md
+   getting_started
 
 
 
