@@ -1,12 +1,5 @@
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7448/spec-7448-56739-0690.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6036/spec-6036-56093-0196.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/5812/spec-5812-56354-0598.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6320/spec-6320-56453-0116.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7106/spec-7106-56663-0646.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/5998/spec-5998-56087-0552.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6684/spec-6684-56412-0490.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6718/spec-6718-56398-0292.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7304/spec-7304-56745-0342.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/5194/spec-5194-56062-0888.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6694/spec-6694-56386-1000.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/5801/spec-5801-56328-0950.fits
+https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6686/spec-6686-56389-0938.fits
+https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/1438/spec-1438-53054-0622.fits
+https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7383/spec-7383-56749-0876.fits
+https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/0965/spec-0965-52438-0307.fits
+https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7394/spec-7394-57131-0852.fits

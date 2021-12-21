@@ -133,3 +133,25 @@ def splitfile(filename, number_of_files):
             files[i % number_of_files].write(line)
         for f in files:
             f.close()
+
+
+def create_speclist(sample, download_folder):
+    '''Create speclist given an astropy Table. Makes assumptions about relevant names of
+            the spectral information'''
+            
+    spec_file = open(download_folder+'/speclist.txt', 'w')
+
+    for source in sample:
+        plate = str(source['PLATE']).zfill(4)
+        fiber = str(source['FIBERID']).zfill(4)
+        mjd = str(source['MJD']).zfill(5)
+
+        start = "https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/"
+
+        line = start + plate + "/spec-" + plate + "-" + mjd + "-" + fiber + ".fits\n"
+        out = " -O TEMP_SPEC/spec-" + plate + "-" + mjd + "-" + fiber + ".fits "
+
+        comb = out + line
+
+        spec_file.write(line)
+    spec_file.close()

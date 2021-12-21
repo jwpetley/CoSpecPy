@@ -18,7 +18,12 @@ class Composite:
         self.fluxes = []
 
     def reset_composite(self):
+        '''Reset the flux list to an empty list'''
         self.fluxes = []
+
+    def get_fluxes(self):
+        ''' Return the current flux list'''
+        return self.fluxes
 
     def set_download_handler(self, handler):
         ''' Set the download handler for in-built fetching of spectra'''
@@ -78,6 +83,13 @@ class Composite:
                                 " files to split the speclist into.")
 
 
+    def composite_from_table(self, table, chunks = 1):
+        '''Create a composite from an Astropy table, produces speclist files as an intermediary'''
+        create_speclist(table, self.download_handler.download_folder) #Use helper function to create speclist
+        print(self.download_handler.download_folder+"/speclist.txt")
+        self.composite_from_speclist(self.download_handler.download_folder+"/speclist.txt", chunks)
+
+
 
     def plot_composite(self, output_figure):
         '''Simple plot of the current composite'''
@@ -113,9 +125,5 @@ class Composite:
         '''Full example run using the already downloaded list'''
         self.set_wavelength_grid(1000, 3000, 2500)
         self.set_normalisation(2575, 2625)
-
-
         self.composite_from_downloads(download_folder)
-
-
         self.plot_composite()

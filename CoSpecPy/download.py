@@ -3,6 +3,7 @@ import scipy
 from subprocess import call
 import pkg_resources
 from glob import glob
+import os
 
 
 class DownloadHandler:
@@ -17,7 +18,7 @@ class DownloadHandler:
         self.download_method = download_method
         self.no_of_connections = no_of_connections
         self.batch_size = batch_size
-        self.download_folder = download_folder
+        self.download_folder = os.path.abspath(download_folder)
 
     def download_spectra(self, download_file):
         '''Given spectra list containing correctly formatted URLs, download

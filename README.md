@@ -6,6 +6,8 @@ Future releases will contain additional features for plotting and uncertainty in
 
 ## Install Instructions
 
+Requires a Python version later than 3.6.
+
 Install using `pip` available through:
 
 `pip install CoSpecPy`
@@ -56,19 +58,22 @@ The `DownloadHandler` requires use of either `wget` or `aria2` to download from 
 
 `sudo apt-get install wget`
 
-`aria2` is a lightweight multi-protocol & multi-source command-line download utility. Information and documentation can be found here [https://aria2.github.io/](https://aria2.github.io/). For a quick Debian/Ubuntu install try:
+`aria2` is a lightweight multi-protocol & multi-source command-line download utility and can be far faster than `wget` when used with this package. Information and documentation can be found here [https://aria2.github.io/](https://aria2.github.io/). For a quick Debian/Ubuntu install try:
 
 `sudo apt-get install -y aria2`
 
 ## Features Implemented
 
-Download of spectra list using either `aria2` or `wget`. `aria2` allows for easy opening of multiple connections for a much faster download.
+- Download of spectra list using either `aria2` or `wget`. `aria2` allows for easy opening of multiple connections for a much faster download.
 
-Example included with `DownloadHandler.download_example()`
+- Example included with `DownloadHandler.download_example()`
+
+- Batch-split downloads given spectra list
+
+
 
 ## Future Features
 
-- Batch-split downloads given spectra list
 - Spectral composite making from downloads - Options for wavelength grid, normalisation range, uncertainty estimation, plotting
 - Helper functions to go from an `astropy.Table` through to composite making
 - Possible inclusion of SDSS querying to create the fetch information for speclist
