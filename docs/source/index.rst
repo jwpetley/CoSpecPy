@@ -11,7 +11,7 @@ Welcome to CoSpecPy's documentation!
    :caption: Contents:
 
 .. toctree::
-   getting_started
+   getting_started.md
 
 Indices and tables
 ==================
