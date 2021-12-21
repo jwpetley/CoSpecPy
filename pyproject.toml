@@ -2,9 +2,5 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "myst-parser",
-    "numpy",
-    "scipy",
-    "astropy",
 ]
 build-backend = "setuptools.build_meta"
