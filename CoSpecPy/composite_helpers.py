@@ -3,6 +3,7 @@ from glob import glob
 import scipy.interpolate as interp
 from astropy.cosmology import Planck15
 from astropy.io import fits
+import os
 
 
 def extract_spectra(file):
@@ -122,3 +123,13 @@ def boostrap_fluxes(fluxes, samples = 100):
 
 
     return median_flux, std_flux
+
+def splitfile(filename, number_of_files):
+    '''Split file into a set number of smaller chunks'''
+    path = os.path.dirname(filename)
+    with open(filename) as infp:
+        files = [open(os.path.join(path,'%d.txt'%i), 'w') for i in range(number_of_files)]
+        for i, line in enumerate(infp):
+            files[i % number_of_files].write(line)
+        for f in files:
+            f.close()
