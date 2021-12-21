@@ -12,6 +12,7 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath('../..'))
 
 
@@ -34,7 +35,7 @@ extensions = ['sphinx.ext.autodoc',
         'sphinx.ext.napoleon',
 ]
 
-autodoc_mock_imports = ["numpy", "scipy", "astropy"]
+autodoc_mock_imports = ["numpy", "scipy", "astropy", "matplotlib"]
 
 
 
