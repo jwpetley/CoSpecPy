@@ -29,3 +29,6 @@ For a quick example you can use:
 
   # Optional
   example_composite.save_composite("example.npy") #Write composite to binary .npy file
+
+
+Other features can be explored by looking through the code. 
