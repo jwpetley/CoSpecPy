@@ -10,7 +10,8 @@ Welcome to CoSpecPy's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+.. toctree::
+   GettingStarted.md
 
 Indices and tables
 ==================
