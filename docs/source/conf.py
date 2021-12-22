@@ -33,6 +33,7 @@ release = '0.4'
 # ones.
 extensions = ['sphinx.ext.autodoc',
         'sphinx.ext.napoleon',
+        'sphinx.ext.intersphinx',
 ]
 
 autodoc_mock_imports = ["numpy", "scipy", "astropy", "matplotlib"]

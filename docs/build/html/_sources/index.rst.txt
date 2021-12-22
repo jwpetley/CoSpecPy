@@ -14,10 +14,10 @@ Feautures
 The features currently implemented included:
    * Downloading of spectra from SDSS DR12 and DR14
    * Creation of composites from:
-      * A directory of downloaded spectra
-      * A list of valid SDSS URLs
-      * An astropy table containing valid PLATE, MJD and FIBERIDs
-      * A list of ra and dec positions in degrees
+      * A directory of downloaded spectra - :meth:`Composite.composite_from_downloads(dir_name) <CoSpecPy.composites.Composite.composite_from_downloads>`
+      * A list of valid SDSS URLs - - :meth:`Composite.composite_from_speclist(speclist) <CoSpecPy.composites.Composite.composite_from_speclist>`
+      * An astropy table containing valid PLATE, MJD and FIBERIDs - - :meth:`Composite.composite_from_table(Astropy.Table) <CoSpecPy.composites.Composite.composite_from_table>`
+      * A list of ra and dec positions in degrees - :meth:`Composite.composite_from_coords(ra, dec) <CoSpecPy.composites.Composite.composite_from_coords>`
       * Plotting of stored spectra
 
 In the future I will add more features including:
@@ -32,6 +32,11 @@ In the future I will add more features including:
    Installation
    getting_started
 
+===================
+Full Documentation
+===================
+
+.. toctree::
    DownloadHandler
    Composites
    Plotting

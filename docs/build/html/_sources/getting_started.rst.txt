@@ -41,7 +41,7 @@ You must have wget installed:
   example_composite.composite_from_coords(ra, dec) # Will download SDSS DR14 catalogue if not already present (~750 MB)
   example_composite.plot_composite()
 
-This will produce the output image shown below
+The example download section of the code will produce ths output. Feel free to change parameters
 
 .. image:: _static/example.png
 

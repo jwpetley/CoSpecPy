@@ -6,6 +6,7 @@ CoSpecPy/__init__.py
 CoSpecPy/composite_helpers.py
 CoSpecPy/composites.py
 CoSpecPy/download.py
+CoSpecPy/plotting.py
 CoSpecPy.egg-info/PKG-INFO
 CoSpecPy.egg-info/SOURCES.txt
 CoSpecPy.egg-info/dependency_links.txt
