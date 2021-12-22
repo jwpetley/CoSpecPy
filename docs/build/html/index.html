@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quick Start" href="getting_started.html" /> 
+    <link rel="next" title="Install Instructions" href="Installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,9 +38,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DownloadHandler.html">Download Handler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Composites.html">Composites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
 </ul>
 
         </div>
@@ -69,14 +71,50 @@
              
   <section id="welcome-to-cospecpy-s-documentation">
 <h1>Welcome to CoSpecPy’s documentation!<a class="headerlink" href="#welcome-to-cospecpy-s-documentation" title="Permalink to this headline"></a></h1>
+<p>This is a Python package for creating composite spectra using the latest SDSS
+spectra releases. The source code for this project is found at
+<a class="reference external" href="https://github.com/jwpetley/CoSpecPy">https://github.com/jwpetley/CoSpecPy</a>.
+If you would like to get involved in improving this
+project then please contact me at <a class="reference external" href="mailto:jwpetley&#37;&#52;&#48;gmail&#46;com">jwpetley<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+<section id="feautures">
+<h2>Feautures<a class="headerlink" href="#feautures" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt>The features currently implemented included:</dt><dd><ul class="simple">
+<li><p>Downloading of spectra from SDSS DR12 and DR14</p></li>
+<li><dl class="simple">
+<dt>Creation of composites from:</dt><dd><ul>
+<li><p>A directory of downloaded spectra</p></li>
+<li><p>A list of valid SDSS URLs</p></li>
+<li><p>An astropy table containing valid PLATE, MJD and FIBERIDs</p></li>
+<li><p>A list of ra and dec positions in degrees</p></li>
+<li><p>Plotting of stored spectra</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>In the future I will add more features including:</dt><dd><ul class="simple">
+<li><p>More valid inputs for composite creation</p></li>
+<li><p>Fitting of composites</p></li>
+<li><p>Inclusion of other sources than SDSS</p></li>
+</ul>
+</dd>
+</dl>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#download-dependencies">Download Dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DownloadHandler.html">Download Handler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Composites.html">Composites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
 </ul>
 </div>
+</section>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
@@ -91,7 +129,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Installation.html" class="btn btn-neutral float-right" title="Install Instructions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotting &mdash; CoSpecPy 0.4 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Composites" href="Composites.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CoSpecPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DownloadHandler.html">Download Handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Composites.html">Composites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CoSpecPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Plotting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Plotting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-CoSpecPy.plotting">
+<span id="plotting"></span><h1>Plotting<a class="headerlink" href="#module-CoSpecPy.plotting" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CoSpecPy.plotting.</span></span><span class="sig-name descname"><span class="pre">ComparisonPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w_low</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_high</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot" title="Permalink to this definition"></a></dt>
+<dd><p>Class for Multiple Composites</p>
+<p>This class handles the plotting of one or more composites on a single
+plot</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.composite_list">
+<span class="sig-name descname"><span class="pre">composite_list</span></span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.composite_list" title="Permalink to this definition"></a></dt>
+<dd><p>Contains all the currently added composites</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="Composites.html#CoSpecPy.composites.Composite" title="CoSpecPy.composites.Composite">Composite</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.w_low">
+<span class="sig-name descname"><span class="pre">w_low</span></span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.w_low" title="Permalink to this definition"></a></dt>
+<dd><p>Lowest plotting wavelength in Angstrom. Default = 0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.w_high">
+<span class="sig-name descname"><span class="pre">w_high</span></span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.w_high" title="Permalink to this definition"></a></dt>
+<dd><p>Highest plotting wavelength in Angstrom. Default = 3000</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.add_composite">
+<span class="sig-name descname"><span class="pre">add_composite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">composite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.add_composite" title="Permalink to this definition"></a></dt>
+<dd><p>Add a composite to the current composite list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>composite</strong> (<a class="reference internal" href="Composites.html#CoSpecPy.composites.Composite" title="CoSpecPy.composites.Composite"><em>Composite</em></a>) – A valid composite class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.plot_all">
+<span class="sig-name descname"><span class="pre">plot_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.plot_all" title="Permalink to this definition"></a></dt>
+<dd><p>Plot all Composites</p>
+<p>Plot all of the composites currently within the class composite_list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>figsize</strong> (<em>tuple</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – Figsize to path to maptlotlib. Default = (12,7)</p></li>
+<li><p><strong>ylim</strong> (<em>tuple</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – ylim option for matplotlib. Default leaves it to matlotlib automatically</p></li>
+<li><p><strong>fig_output</strong> (<em>str</em><em>, </em><em>optional</em>) – Output filename. If not given then the figure is shown via GUI</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CoSpecPy.plotting.ComparisonPlot.set_plotting_wavelength">
+<span class="sig-name descname"><span class="pre">set_plotting_wavelength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CoSpecPy.plotting.ComparisonPlot.set_plotting_wavelength" title="Permalink to this definition"></a></dt>
+<dd><p>Set plotting wavelength range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w_low</strong> (<em>float</em>) – Lowest plotting wavelength in Angstrom</p></li>
+<li><p><strong>w_high</strong> (<em>float</em>) – Highest plotting wavelength in Angstrom</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Composites.html" class="btn btn-neutral float-left" title="Composites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, James Petley.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

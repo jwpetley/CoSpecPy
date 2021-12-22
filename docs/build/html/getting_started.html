@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Download Handler" href="DownloadHandler.html" />
-    <link rel="prev" title="Welcome to CoSpecPy’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Install Instructions" href="Installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +39,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install Instructions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DownloadHandler.html">Download Handler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Composites.html">Composites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plotting.html">Plotting</a></li>
 </ul>
 
         </div>
@@ -70,11 +72,18 @@
              
   <section id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h1>
-<p>The only feature currently implemented (Day 1) is the <code class="docutils literal notranslate"><span class="pre">DownloadHandler</span></code> and the basics of the main <code class="docutils literal notranslate"><span class="pre">Composite</span></code> class. Make sure that either <code class="docutils literal notranslate"><span class="pre">wget</span></code> or <code class="docutils literal notranslate"><span class="pre">aria2</span></code> is installed on your machine.</p>
-<p>For a quick example you can use:</p>
+<p>We have added an example speclist of 50 SDSS URLs to get you started with composite creation.</p>
+<p>Below is also another example of how easy it is to get started with this package using only
+RA and Dec coordinates of target objects.
+Given a list of ra and dec positions in degrees, this will find the best matches to the SDSS DR14 quasar
+catalogue and create a composite to plot.</p>
+<p>You must have wget installed:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">CoSpecPy</span> <span class="kn">import</span> <span class="n">DownloadHandler</span><span class="p">,</span> <span class="n">Composite</span> <span class="c1"># Import the Handler</span>
 
 <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;/path/to/output&quot;</span>
+
+<span class="n">ra</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Input you ra values here</span>
+<span class="n">dec</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Input you dec values here</span>
 
 <span class="n">example_handler</span> <span class="o">=</span> <span class="n">DownloadHandler</span><span class="p">(</span><span class="n">download_method</span> <span class="o">=</span> <span class="s2">&quot;wget&quot;</span><span class="p">,</span> <span class="c1">#Download method (aria2 or wget)</span>
 <span class="n">no_of_connections</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="c1">#Connections only apply to aria2, batches not implemented</span>
@@ -86,15 +95,19 @@
 <span class="c1">#This will download the 50 example spectra in CoSpecPy/data/example_speclist.txt to your chosen output</span>
 
 <span class="n">example_composite</span> <span class="o">=</span> <span class="n">Composite</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;example_composite&quot;</span><span class="p">)</span> <span class="c1">#Creation of Composite Class</span>
-<span class="n">example_composite</span><span class="o">.</span><span class="n">add_wavelength_grid</span><span class="p">(</span><span class="n">w_min</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">w_max</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">,</span> <span class="n">steps</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">)</span> <span class="c1">#Add the desired wavelength grid in Angstrom</span>
-<span class="n">example_composite</span><span class="o">.</span><span class="n">add_normalisation</span><span class="p">(</span><span class="n">norm_low</span> <span class="o">=</span> <span class="mi">2575</span><span class="p">,</span> <span class="n">norm_high</span> <span class="o">=</span> <span class="mi">2625</span><span class="p">)</span> <span class="c1">#Add desired normalisation range in Angstrom</span>
+<span class="n">example_composite</span><span class="o">.</span><span class="n">set_wavelength_grid</span><span class="p">(</span><span class="n">w_min</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">w_max</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">,</span> <span class="n">steps</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">)</span> <span class="c1">#Add the desired wavelength grid in Angstrom</span>
+<span class="n">example_composite</span><span class="o">.</span><span class="n">set_normalisation</span><span class="p">(</span><span class="n">norm_low</span> <span class="o">=</span> <span class="mi">2575</span><span class="p">,</span> <span class="n">norm_high</span> <span class="o">=</span> <span class="mi">2625</span><span class="p">)</span> <span class="c1">#Add desired normalisation range in Angstrom</span>
 <span class="n">example_composite</span><span class="o">.</span><span class="n">composite_from_downloads</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span> <span class="c1"># Will create the composite</span>
 <span class="n">example_composite</span><span class="o">.</span><span class="n">plot_composite</span><span class="p">()</span> <span class="c1"># Plots the composite stored in the composite class with bootstrapped uncertainties</span>
 
-<span class="c1"># Optional</span>
-<span class="n">example_composite</span><span class="o">.</span><span class="n">save_composite</span><span class="p">(</span><span class="s2">&quot;example.npy&quot;</span><span class="p">)</span> <span class="c1">#Write composite to binary .npy file</span>
+<span class="c1"># Now rest and create using the ra and dec list</span>
+<span class="n">example_composite</span><span class="o">.</span><span class="n">reset_composite</span><span class="p">()</span>
+<span class="n">example_composite</span><span class="o">.</span><span class="n">composite_from_coords</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span> <span class="c1"># Will download SDSS DR14 catalogue if not already present (~750 MB)</span>
+<span class="n">example_composite</span><span class="o">.</span><span class="n">plot_composite</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>This will produce the output image shown below</p>
+<img alt="_images/example.png" src="_images/example.png" />
 <p>Other features can be explored by looking through the code.</p>
 </section>
 
@@ -102,7 +115,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to CoSpecPy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Install Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="DownloadHandler.html" class="btn btn-neutral float-right" title="Download Handler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

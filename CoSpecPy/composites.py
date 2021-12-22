@@ -212,6 +212,8 @@ class Composite:
 
         self.composite_from_table(best_match_SDSS, chunks)
 
+        
+
 
 
 
