@@ -11,6 +11,7 @@ Welcome to CoSpecPy's documentation!
 
    DownloadHandler
    Composites
+   Plotting
 
 
 
