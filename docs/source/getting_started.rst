@@ -2,15 +2,20 @@
 Quick Start
 ============
 
-The only feature currently implemented (Day 1) is the ``DownloadHandler`` and the basics of the main ``Composite`` class. Make sure that either ``wget`` or ``aria2`` is installed on your machine.
+Given a list of ra and dec positions, find the best matches to the SDSS DR14 quasar
+catalogue and create a composite to plot.
 
-For a quick example you can use:
+
+For a quick example you can use (you must have wget installed):
 
 .. code-block:: python
 
   from CoSpecPy import DownloadHandler, Composite # Import the Handler
 
   output_dir = "/path/to/output"
+
+  ra = [] # Input you ra values here
+  dec = [] # Input you dec values here
 
   example_handler = DownloadHandler(download_method = "wget", #Download method (aria2 or wget)
   no_of_connections = 1, batch_size="10", #Connections only apply to aria2, batches not implemented
@@ -31,4 +36,4 @@ For a quick example you can use:
   example_composite.save_composite("example.npy") #Write composite to binary .npy file
 
 
-Other features can be explored by looking through the code. 
+Other features can be explored by looking through the code.

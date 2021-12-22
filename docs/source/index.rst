@@ -3,7 +3,7 @@ Welcome to CoSpecPy's documentation!
 
 This is a Python package for creating composite spectra using the latest SDSS
 spectra releases. The source code for this project is found at
-`https://github.com/jwpetley/CoSpecPy <https://github.com/jwpetley/CoSpecPy>`.
+https://github.com/jwpetley/CoSpecPy.
 If you would like to get involved in improving this
 project then please contact me at jwpetley@gmail.com.
 
@@ -29,6 +29,7 @@ In the future I will add more features including:
    :maxdepth: 2
    :caption: Contents:
 
+   Installation
    getting_started
 
    DownloadHandler
