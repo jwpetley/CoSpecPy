@@ -138,6 +138,7 @@ class Composite:
                 chunks (int, optional): Number of smallr chunks to split composite processing into. Useful if disc space is an issue.
         '''
         if chunks == 1:
+            self.download_handler.clear_up()
             self.download_handler.download_spectra(speclist)
             self.composite_from_downloads(self.download_handler.download_folder)
 
@@ -149,6 +150,7 @@ class Composite:
             glob_speclist = glob(os.path.dirname(speclist) +"/*[0-9]**.txt")
             print(glob_speclist)
             for file in glob_speclist:
+                self.download_handler.clear_up()
                 self.download_handler.download_spectra(file)
                 self.composite_from_downloads(self.download_handler.download_folder)
                 self.download_handler.clear_up()

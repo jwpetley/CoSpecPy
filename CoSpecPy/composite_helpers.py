@@ -145,7 +145,7 @@ def create_speclist(sample, download_folder):
         fiber = str(source['FIBERID']).zfill(4)
         mjd = str(source['MJD']).zfill(5)
 
-        start = "https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/"
+        start = "https://data.sdss.org/sas/dr14/eboss/spectro/redux/v5_10_0/spectra/"
 
         line = start + plate + "/spec-" + plate + "-" + mjd + "-" + fiber + ".fits\n"
         out = " -O TEMP_SPEC/spec-" + plate + "-" + mjd + "-" + fiber + ".fits "
