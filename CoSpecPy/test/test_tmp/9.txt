@@ -1,5 +1,0 @@
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/7396/spec-7396-56809-0559.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/1441/spec-1441-53083-0321.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6686/spec-6686-56389-0710.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/6686/spec-6686-56389-0398.fits
-https://data.sdss3.org/sas/dr12/boss/spectro/redux/v5_7_0/spectra/1438/spec-1438-53054-0447.fits

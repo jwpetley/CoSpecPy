@@ -59,11 +59,9 @@ def composite_run(file_list, comp_wavs,
 
         scaling_factor = np.mean(flux_array[arg_normal_low:arg_normal_high])
         avg.append(scaling_factor)
-        #print(flux_array[arg_normal])
 
         normalised_array = flux_array/scaling_factor
 
-        #print(normalised_array)
 
         norm_fluxes.append(normalised_array)
 
@@ -99,6 +97,7 @@ def jacknife_test(fluxes, median_flux, std_flux):
 
 
 def boostrap_fluxes(fluxes, samples = 100):
+    ''' Full bootstrap uncertainty method '''
     medians = []
 
 
@@ -138,7 +137,7 @@ def splitfile(filename, number_of_files):
 def create_speclist(sample, download_folder):
     '''Create speclist given an astropy Table. Makes assumptions about relevant names of
             the spectral information'''
-            
+
     spec_file = open(download_folder+'/speclist.txt', 'w')
 
     for source in sample:

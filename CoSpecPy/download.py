@@ -57,5 +57,33 @@ class DownloadHandler:
 
     def clear_up(self):
         '''Clear files away from the specified download_folder'''
-        files = glob(self.download_folder+'/*.fits')
+        files = glob(self.download_folder+'/*spec**.fits')
         call(['rm','-r'] + files)
+
+    def get_DR12_quasars(self):
+        '''Get the 512MB DR12 catalogue for future matching'''
+
+        if self.download_method == "wget":
+            call(['wget', '--no-check-certificate', '-c',
+            'http://data.sdss3.org/sas/dr12/boss/qso/DR12Q/DR12Q.fits'],
+            cwd = self.download_folder)
+
+        if self.download_method == "aria2":
+            call(['aria2c', '-c', '--check-certificate=false',
+            'http://data.sdss3.org/sas/dr12/boss/qso/DR12Q/DR12Q.fits'],
+            cwd = self.download_folder)
+
+    def get_DR14_quasars(self):
+        '''Get the 750MB DR14 catalogue for future matching'''
+
+        if self.download_method == "wget":
+            print("Downloading DR14")
+            call(['wget', '--no-check-certificate', '-c',
+            'https://data.sdss.org/sas/dr14/eboss/qso/DR14Q/DR14Q_v4_4.fits'],
+            cwd = self.download_folder)
+
+        if self.download_method == "aria2":
+            print("Downloading DR14")
+            call(['aria2c', '-c', '--check-certificate=false',
+            'https://data.sdss.org/sas/dr14/eboss/qso/DR14Q/DR14Q_v4_4.fits'],
+            cwd = self.download_folder)

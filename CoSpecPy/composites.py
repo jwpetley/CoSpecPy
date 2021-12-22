@@ -5,10 +5,11 @@ import scipy.interpolate as interp
 import numpy as np
 from astropy.io import fits
 
-
+from subprocess import call
 from glob import glob
 
 import pkg_resources
+
 
 class Composite:
     '''Composite Class to handle creation of composites
@@ -109,7 +110,7 @@ class Composite:
                 download_folder (string): Path to the folder where spectra are downloaded as .fits files.
         '''
 
-        file_list = glob(download_folder+"/*.fits")
+        file_list = glob(download_folder+"/*spec**.fits")
         output_fluxes = [] #Initalise empty list for fluxes
 
         composite_run(file_list, self.wavelength_grid,
@@ -142,6 +143,8 @@ class Composite:
 
 
         elif chunks > 1:
+            glob_speclist = glob(os.path.dirname(speclist) +"/*[0-9]**.txt")
+            call(['rm', '-r'] + glob_speclist)
             splitfile(speclist, chunks)
             glob_speclist = glob(os.path.dirname(speclist) +"/*[0-9]**.txt")
             print(glob_speclist)
@@ -167,6 +170,48 @@ class Composite:
         create_speclist(table, self.download_handler.download_folder) #Use helper function to create speclist
         print(self.download_handler.download_folder+"/speclist.txt")
         self.composite_from_speclist(self.download_handler.download_folder+"/speclist.txt", chunks)
+
+
+    def composite_from_coords(self, ra, dec, catalogue = None, chunks = 1):
+        '''Create composite from RA and DEC
+
+            Download and create composite spectra from a list of ra and dec positions in degrees. Requires
+            the SDSS DR14 or SDSS DR12 catalogue. If no path provided it will download one.
+
+            Args:
+                ra (list or array): Right Ascension of objects for composite in degrees
+                dec (list or array): Declination of objects for composite in degrees
+                catalogue (str, optional): Path to already existing DR14 or DR12 catalogue
+                chunks (int, optional): Number of smaller chunks to split download into
+        '''
+        from astropy.coordinates import match_coordinates_sky, SkyCoord
+        import astropy.units as u
+
+        if catalogue == None:
+            self.download_handler.get_DR14_quasars()
+            catalogue_path = os.path.abspath(self.download_handler.download_folder)+"/DR14Q_v4_4.fits"
+
+        else:
+            catalogue_path = os.path.abspath(catalogue)
+
+        print("Catalogue is located at %s"%catalogue_path)
+        quasar_catalogue = fits.open(catalogue_path)[1].data
+
+        catalogue_coords = SkyCoord(ra = quasar_catalogue['RA']*u.degree,
+                                        dec = quasar_catalogue['DEC']*u.degree)
+
+        target_coords = SkyCoord(ra = ra*u.degree, dec = dec*u.degree)
+
+        best_match = target_coords.match_to_catalog_sky(catalogue_coords)
+
+        print(best_match)
+
+        best_match_SDSS = quasar_catalogue[best_match[0]]
+
+        self.composite_from_table(best_match_SDSS, chunks)
+
+
+
 
 
 
@@ -203,6 +248,9 @@ class Composite:
             plt.savefig(output_figure)
         else:
             plt.show()
+
+
+
 
     def example_from_downloads(self, download_folder):
         '''Full example run using the already downloaded list

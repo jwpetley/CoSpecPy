@@ -19,5 +19,11 @@ print("Composite Setup Finished")
 example_table = fits.open("test_table.fits")
 example_table = example_table[1].data
 
-example_composite.composite_from_table(example_table, chunks = 10)
+
+ra = example_table['RA_1']
+dec = example_table['DEC_1']
+
+print("RA and DEC loaded")
+
+example_composite.composite_from_coords(ra, dec, chunks = 3)
 example_composite.plot_composite(None)
