@@ -4,6 +4,8 @@ This is a package written for the purpose of creating composite spectra from SDS
 
 Future releases will contain additional features for plotting and uncertainty information. Connections to astropy Tables and queries are also a possibility.
 
+Full documentation for this project can be found at [https://cospecpy.readthedocs.io/en/latest/](https://cospecpy.readthedocs.io/en/latest/)
+
 ## Install Instructions
 
 Requires a Python version later than 3.6.
@@ -18,9 +20,7 @@ Or alternatively you can clone this GitHub repository, navigate to the directory
 
 ## Quick Start
 
-The only feature currently implemented (Day 1) is the `DownloadHandler` and the basics of the main `Composite` class. Make sure that either `wget` or `aria2` is installed on your machine.
-
-For a quick example you can use
+Here are a couple of examples using the early stages of the `Composite` and `DownloadHandler` classes. We can create spectra using the example 50 SDSS URLs provided or by specifying the RA and DEC of your targets of interest. Make sure that either `wget` or `aria2` is installed on your machine.
 
 ```python
 from CoSpecPy import DownloadHandler, Composite # Import the Handler
@@ -75,11 +75,12 @@ The `DownloadHandler` requires use of either `wget` or `aria2` to download from 
 
 - Batch-split downloads given spectra list
 
+- Spectral composite making from downloads - Options for wavelength grid, normalisation range, uncertainty estimation, plotting
+
+- Helper functions to go from an `astropy.Table` through to composite making
 
 
 ## Future Features
 
-- Spectral composite making from downloads - Options for wavelength grid, normalisation range, uncertainty estimation, plotting
-- Helper functions to go from an `astropy.Table` through to composite making
 - Possible inclusion of SDSS querying to create the fetch information for speclist
 - Long-term, add external features such as redenning estimation  
