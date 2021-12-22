@@ -2,11 +2,15 @@
 Quick Start
 ============
 
-Given a list of ra and dec positions, find the best matches to the SDSS DR14 quasar
+We have added an example speclist of 50 SDSS URLs to get you started with composite creation.
+
+Below is also another example of how easy it is to get started with this package using only
+RA and Dec coordinates of target objects.
+Given a list of ra and dec positions in degrees, this will find the best matches to the SDSS DR14 quasar
 catalogue and create a composite to plot.
 
 
-For a quick example you can use (you must have wget installed):
+You must have wget installed:
 
 .. code-block:: python
 
@@ -32,8 +36,10 @@ For a quick example you can use (you must have wget installed):
   example_composite.composite_from_downloads(output_dir) # Will create the composite
   example_composite.plot_composite() # Plots the composite stored in the composite class with bootstrapped uncertainties
 
-  # Optional
-  example_composite.save_composite("example.npy") #Write composite to binary .npy file
+  # Now rest and create using the ra and dec list
+  example_composite.reset_composite()
+  example_composite.composite_from_coords(ra, dec) # Will download SDSS DR14 catalogue if not already present (~750 MB)
+  example_composite.plot_composite()
 
 
 Other features can be explored by looking through the code.
