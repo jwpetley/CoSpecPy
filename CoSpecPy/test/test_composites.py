@@ -1,5 +1,6 @@
 from CoSpecPy.composites import Composite
 from CoSpecPy.download import DownloadHandler
+from CoSpecPy.plotting import ComparisonPlot
 import pkg_resources
 import os
 from astropy.io import fits
@@ -26,4 +27,8 @@ dec = example_table['DEC_1']
 print("RA and DEC loaded")
 
 example_composite.composite_from_coords(ra, dec, chunks = 3)
-example_composite.plot_composite(None)
+
+plotter = ComparisonPlot(1200, 1800)
+plotter.add_composite(example_composite)
+plotter.plot_all()
+#example_composite.plot_composite(None)
